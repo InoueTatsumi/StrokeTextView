@@ -31,10 +31,6 @@ public class StrokeTextView extends TextView {
     private static final int DEFAULT_INNER_COLOR = Color.WHITE;
     //默认是否是用描边
     private boolean mDrawSideLine = true;
-    //记录字的二维数组
-    int[][] position;
-    //字体高度
-    int mTextHeight;
 
     public StrokeTextView(Context context, int stokeColor, int innerColor, int strokeWidth) {
         super(context);
@@ -63,8 +59,6 @@ public class StrokeTextView extends TextView {
         if (mDrawSideLine) {
             //外层绘制
             setTextColorUseReflection(mStrokeColor);
-//            Paint.FontMetrics fontMetrics = mTextPaint.getFontMetrics();
-//            mTextHeight = (int) (Math.ceil(fontMetrics.descent - fontMetrics.top) + 2);
             //描边样式
             mTextPaint.setStyle(Paint.Style.FILL_AND_STROKE);
             //描边宽度
